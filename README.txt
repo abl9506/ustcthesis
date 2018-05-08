@@ -1,8 +1,19 @@
-模板持续更新，请及时到如下网址进行更新！
-项目网址:
+本模板fork form
    https://github.com/ywgATustcbbs?tab=repositories
-备份网址:
-   https://gitlab.lug.ustc.edu.cn/ywg/ustcthesis
+   
+根据2015年新的本科毕业设计格式要求对模板进行了修改
+https://www.teach.ustc.edu.cn/document/doc-administration/4032.html
+
+对原本的本硕博模版进行了简化，main.tex中只保留了本科部分，主要修改为：
+1.修改页眉字样为“本科毕业论文”
+2.修改正文部分的页脚样式为居中显示
+3.使页码从目录页开始计算
+4.修改各标题为符合要求的字体
+5.修复了附录部分排版错误的bug
+
+在本科论文的撰写过程中，会对模板进行进一步维护改善
+
+以下为原版readme部分：
 
 新手请仔细阅读《第一次接触LaTeX？读我》
 
