@@ -780,22 +780,31 @@
 \fancypagestyle{plain}{}
 \pagestyle{fancy}
   \fancyhf{}
-  \ifustc@bachelor\fancyhead[C]{\xiaowuhao{中国科学技术大学学士学位论文}}\relax\else\fancyhead[C]{\small \nouppercase\leftmark}\fi
+  \ifustc@bachelor\fancyhead[C]{\xiaowuhao{中国科学技术大学本科毕业论文}}\relax\else\fancyhead[C]{\small \nouppercase\leftmark}\fi
   \renewcommand{\headrulewidth}{0.7pt}
+
+\newcommand\thanksmatter{%
+    \cleardoublepage
+  \@mainmatterfalse
+% \pagenumbering{Roman}
+  %\fancyfoot{}
+ % \fancyfoot[C]{\small \thepage}
+ }
 
 \renewcommand\frontmatter{%
     \cleardoublepage
   \@mainmatterfalse
-  \pagenumbering{Roman}
+  \pagenumbering{arabic}
   \fancyfoot{}
   \fancyfoot[C]{\small \thepage}}
 
   \renewcommand\mainmatter{%
     \cleardoublepage
   \@mainmattertrue
-  \pagenumbering{arabic}
+ % \pagenumbering{arabic}
   \fancyfoot{}
-  \fancyfoot[RO,LE]{\small \thepage}}
+  \fancyfoot[CO,CE]{\small \thepage}}
+
 
 %Abstracts and thanks
 \newcommand{\ustc@enabstractname}{ABSTRACT}

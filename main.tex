@@ -1,4 +1,4 @@
-\documentclass[master,euler,twoside,openright]{ustcthesis}
+\documentclass[bachelor,euler,twoside,openright]{ustcthesis}
 % 默认twoside 双面打印
 % 将master修改为bachelor, doctor or master
 % 要使用adobe字体，添加adobefonts选项
@@ -85,18 +85,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 前言部分
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thanksmatter
+% 致谢
+	\include{chapter/thanks}
 \frontmatter
 \makeatletter
-\ifustc@bachelor
 	%%%%%%%%%%%%%%%%%
-	%本科论文修改这里
 	%%%%%%%%%%%%%%%%%
-	% 致谢
-	\include{chapter/thanks}
-	
 	%目录部分
 	%目录
 	\tableofcontents
+	% 摘要
+	\include{chapter/abstract}%此文件中含有中英文摘要
+	
 	%默认表格、插图、算法索引名称分别为“表格索引”、“插图索引”和“算法索引”
 	%如果需要自行修改lot，lof，loa的名称，请定义
 	%\ustclotname{...}
@@ -104,50 +105,25 @@
 	%\ustcloaname{...}
 
 	% 表格索引
-	\ustclot
+	%\ustclot
 	% 插图索引
-	\ustclof
+	%\ustclof
 	%算法索引 
 	%如果需要使用算法环境并列出算法索引，请加入补充宏包。
-	\ustcloa
+	%\ustcloa
 	
-	% 摘要
-	\include{chapter/abstract}%此文件中含有中英文摘要
-\else
-	%%%%%%%%%%%%%%%%%
-	%硕博论文修改这里
-	%%%%%%%%%%%%%%%%%
-	% 摘要
-	\include{chapter/abstract}%此文件中含有中英文摘要
-	% 目录
-	\tableofcontents
-	%默认表格、插图、算法索引名称分别为“表格索引”、“插图索引”和“算法索引”
-	%如果需要自行修改lot，lof，loa的名称，请定义
-	%\ustclotname{...}
-	%\ustclofname{...}
-	%\ustcloaname{...}
-
-	% 表格索引
-	\ustclot
-	% 插图索引
-	\ustclof
-	%算法索引 
-	%如果需要使用算法环境并列出算法索引，请加入补充宏包。
-	\ustcloa
 	
-	%符号说明，需要加入补充包
-	\include{chapter/denotation}%不是必需的，如果不想列出请注释掉
-\fi
 \makeatother
+
+
+\mainmatter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 正文部分
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mainmatter
-
   \include{chapter/chap-intro}
   \include{chapter/chap-guide}
-  \include{chapter/chap-example}
+ \include{chapter/chap-example}
   %自行添加
   %\include{chapter/...}
 
@@ -159,24 +135,16 @@
   % 参考文献
   % 使用 BibTeX
   % 选择参考文献的排版格式。注意ustcbib这个格式不保证完全符合要求，请自行决定是否使用
-  \bibliographystyle{ustcbib}%{GBT7714-2005NLang-UTF8}
-  \bibliography{bib/tex}
-  \nocite{*} % for every item
+ % \bibliographystyle{ustcbib}%{GBT7714-2005NLang-UTF8}
+%  \bibliography{bib/tex}
+%  \nocite{*} % for every item
   % 不使用 BibTeX
-  % \include{chapter/bib}
-
+   \include{chapter/bib}
   % 附录，没有请注释掉
-  \begin{appendix}
+\makeatletter
+ \begin{appendix}
     \include{chapter/chap-req}
   \end{appendix}
-
-  \makeatletter
-  \ifustc@bachelor\relax\else
-    % 致谢
-	\include{chapter/thanks}%硕博致谢部分
-    % 发表文章目录
-    \include{chapter/pub}
-  \fi
-  \makeatother
+\makeatother
 
 \end{document}
