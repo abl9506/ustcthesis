@@ -786,9 +786,9 @@
 \newcommand\thanksmatter{%
     \cleardoublepage
   \@mainmatterfalse
-% \pagenumbering{Roman}
-  %\fancyfoot{}
- % \fancyfoot[C]{\small \thepage}
+ \pagenumbering{Roman}
+  \fancyfoot{}
+  \fancyfoot[C]{\small \thepage}
  }
 
 \renewcommand\frontmatter{%
